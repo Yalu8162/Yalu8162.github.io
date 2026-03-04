@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BeshyZXC_ Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="no-scroll">
+    <div class="snap-container-vertical" id="snap-container">
+        <!-- Page 1: Main Page -->
+        <section class="page page--main" id="page-1">
+            <div class="renpy-top animated-gradient">
+                <div class="page__column--dark"></div>
+                <div class="page__column--content">
+                    <!-- Gradient content -->
+                </div>
+            </div>
+            <div class="renpy-bottom">
+                <div class="main-content">
+                    <img data-src="pfp.png" alt="Profile Picture" class="pfp lazy-load">
+                    <div class="main-text">
+                        <h1 class="nickname">BeshyZXC_</h1>
+                        <p class="tagline">hi i can create cool songs<br>maybe</p>
+                        <div class="social-icons">
+                            <a href="https://discord.com/users/843422252246106112" target="_blank" aria-label="Discord"><img src="icons/discord.svg" alt="Discord"></a>
+                            <a href="https://x.com/BeshyZXC_" target="_blank" aria-label="X"><img src="icons/x.svg" alt="X"></a>
+                            <a href="https://t.me/Kotik765" target="_blank" aria-label="Telegram"><img src="icons/telegram.svg" alt="Telegram"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Page 2: Biography Page -->
+        <section class="page page--bio" id="page-2">
+            <div class="renpy-top animated-gradient">
+                <h2 class="bio-title">Biography</h2>
+            </div>
+            <div class="renpy-bottom">
+                <div class="bio-container">
+                    <div class="bio-text">
+                        <p>so there is nothing much to tell about me. i love music since childhood. i was playing videogames just to hear some bangers. now i create bangers. my style is inspired mostly by "Heaven Pierce Her", "Keygen Church", "Toby Fox", "Lena Raine", "C418". i like to associate my soundtracks with places and locations mostly. i am creating music over a year for now.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Page 3: Best Dynamic Track Page -->
+        <section class="page page--split page--dynamic-best" id="page-3">
+            <div class="renpy-top">
+                <div class="video-overlay"></div>
+                <video class="bg-video" loop muted playsinline preload="metadata">
+                    <source src="video/dynamic_best.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="renpy-bottom">
+                <div class="track-info">
+                    <div class="track-text">
+                        <h3 class="track-title">Digital Church</h3>
+                        <p class="track-description">A grand orchestral metal soundtrack. Inspired by 'Tenebre Rosso Sangue' by Keygen Church.</p>
+                    </div>
+                    <div class="custom-player" data-audio="audio/Digital Church.ogg">
+                        <button class="player-btn play-btn" aria-label="Play/Pause"></button>
+                        <div class="player-progress">
+                            <div class="progress-bar"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Page 4: Best Ambient Track Page -->
+        <section class="page page--split page--ambient-best" id="page-4">
+            <div class="renpy-top">
+                <div class="video-overlay video-overlay--light"></div>
+                <video class="bg-video" loop muted playsinline preload="metadata">
+                    <source src="video/ambient_best.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="renpy-bottom">
+                <div class="track-info">
+                    <div class="track-text">
+                        <h3 class="track-title">Ephireal</h3>
+                        <p class="track-description">A dark, atmospheric ambient track with strong acoustic guitar. Inspired by C418 and Toby Fox. Focused on creating a sense of isolation and wonder through layered textures.</p>
+                    </div>
+                    <div class="custom-player" data-audio="audio/ephireal.ogg">
+                        <button class="player-btn play-btn" aria-label="Play/Pause"></button>
+                        <div class="player-progress">
+                            <div class="progress-bar"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Page 5: Leitmotif Switch Track Page -->
+        <section class="page page--split page--leitmotif" id="page-5">
+            <div class="renpy-top">
+                <div class="video-overlay"></div>
+                <video id="video-day" class="bg-video active" loop muted playsinline preload="metadata">
+                    <source src="video/leitmotif_day.mp4" type="video/mp4">
+                </video>
+                <video id="video-night" class="bg-video" loop muted playsinline preload="metadata">
+                    <source src="video/leitmotif_night.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="renpy-bottom">
+                <div class="track-info">
+                    <div class="track-text">
+                        <h3 class="track-title">Raining Hotel</h3>
+                        <p class="track-description">So here i was dealing with the motif. i tried to take one melody and create two different songs.</p>
+                    </div>
+                    <div class="leitmotif-controls">
+                        <span class="label">Morning</span>
+                        <label class="switch">
+                            <input type="checkbox" id="leitmotif-toggle">
+                            <span class="slider"></span>
+                        </label>
+                        <span class="label">Night</span>
+                    </div>
+                    <div class="custom-player-leitmotif">
+                        <button class="player-btn play-btn" id="leitmotif-play" aria-label="Play/Pause"></button>
+                        <audio id="audio-day" src="audio/leitmotif1A.ogg" loop preload="metadata"></audio>
+                        <audio id="audio-night" src="audio/leitmotif1B.ogg" loop preload="metadata"></audio>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Page 6: Hi-Tech Track Page -->
+        <section class="page page--split page--hitech" id="page-6">
+            <div class="renpy-top">
+                <div class="video-overlay"></div>
+                <video class="bg-video" loop muted playsinline preload="metadata">
+                    <source src="video/hitech.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="renpy-bottom">
+                <div class="track-info">
+                    <div class="track-text">
+                        <h3 class="track-title">Neural Overdrive</h3>
+                        <p class="track-description">Hitech song. I was dealing with samples and serum presets. i think it is a cool one</p>
+                    </div>
+                    <div class="custom-player" data-audio="audio/hitech.ogg">
+                        <button class="player-btn play-btn" aria-label="Play/Pause"></button>
+                        <div class="player-progress">
+                            <div class="progress-bar"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Page 7: Digicore Track Page -->
+        <section class="page page--split page--digicore" id="page-7">
+            <div class="renpy-top">
+                <div class="video-overlay"></div>
+                <video class="bg-video" loop muted playsinline preload="metadata">
+                    <source src="video/digicore.mp4" type="video/mp4">
+                </video>
+                <div class="mesh-gradient"></div>
+            </div>
+            <div class="renpy-bottom">
+                <div class="track-info">
+                    <div class="track-text">
+                        <h3 class="track-title">High Technologies</h3>
+                        <p class="track-description">yay digicore song. Made in 1990 style. Used only 1 plugin - Xfer serum for the whole track (and amen break sample ofc)</p>
+                    </div>
+                    <div class="custom-player" data-audio="audio/digicore.ogg">
+                        <button class="player-btn play-btn" aria-label="Play/Pause"></button>
+                        <div class="player-progress">
+                            <div class="progress-bar"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Page 8: Ambient Track (Deep Blue) Page -->
+        <section class="page page--split page--deepblue" id="page-8">
+            <div class="renpy-top">
+                <div class="video-overlay"></div>
+                <video class="bg-video" loop muted playsinline preload="metadata">
+                    <source src="video/abyssaldrift.mp4" type="video/mp4">
+                </video>
+                <canvas id="particle-canvas"></canvas>
+            </div>
+            <div class="renpy-bottom">
+                <div class="track-info">
+                    <div class="track-text">
+                        <h3 class="track-title">Abyssal Drift</h3>
+                        <p class="track-description">Track inspired by ocean depths, mostly "Wrath" layer from "ULTRAKILL". Uses a acoustic fortepiano and reverb for underwater effect.</p>
+                    </div>
+                    <div class="custom-player" data-audio="audio/deepblue.ogg">
+                        <button class="player-btn play-btn" aria-label="Play/Pause"></button>
+                        <div class="player-progress">
+                            <div class="progress-bar"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Page 9: Place-Themed Sea Track Page -->
+        <section class="page page--split page--sea" id="page-9">
+            <div class="renpy-top">
+                <div class="video-overlay"></div>
+                <video class="bg-video" loop muted playsinline preload="metadata">
+                    <source src="video/sea.mp4" type="video/mp4">
+                </video>
+                <div class="bubble-container"></div>
+            </div>
+            <div class="renpy-bottom">
+                <div class="track-info">
+                    <div class="track-text">
+                        <h3 class="track-title">Beach Episode</h3>
+                        <p class="track-description">Cool song insired by old pokemon from GBA. Used piano, Acoustic Guitar, Bass guitar, and percussion.</p>
+                    </div>
+                    <div class="custom-player" data-audio="audio/sea.ogg">
+                        <button class="player-btn play-btn" aria-label="Play/Pause"></button>
+                        <div class="player-progress">
+                            <div class="progress-bar"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Page 10: Software Page -->
+        <section class="page page--software" id="page-10">
+            <div class="renpy-top animated-gradient">
+                <h2 class="software-title">Software</h2>
+            </div>
+            <div class="renpy-bottom">
+                <div class="software-grid">
+                    <div class="software-block">
+                        <img src="icons/daw.svg" alt="DAW Icon" class="software-icon">
+                        <h3>DAW</h3>
+                        <ul>
+                            <li>Image-Line FL Studio 24</li>
+                            <li>Producer Edition</li>
+                        </ul>
+                    </div>
+                    <div class="software-block">
+                        <img src="icons/vst.svg" alt="VST Icon" class="software-icon">
+                        <h3>VSTs</h3>
+                        <ul>
+                            <li>Xfer Serum 2</li>
+                            <li>Roland Zenology</li>
+                            <li>Ample Metal Hellrizer</li>
+                            <li>Soundfont Player</li>
+                            <li>MT-Power Drumkit 2</li>
+                        </ul>
+                    </div>
+                    <div class="software-block">
+                        <img src="icons/mastering.svg" alt="Mastering Icon" class="software-icon">
+                        <h3>Mastering</h3>
+                        <ul>
+                            <li>Xfer OTT</li>
+                            <li>Guitar Rig 7</li>
+                            <li>Le Phonk</li>
+                            <li>Tritik Krush</li>
+                            <li>Neural DSP Bundle</li>
+                            <li>Serum 2 FX</li>
+                            <li>FL Stock plugins.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

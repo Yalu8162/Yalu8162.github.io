@@ -1,0 +1,562 @@
+:root {
+    /* Color Palette */
+    --color-dark-purple: #2c003e;
+    --color-light-purple: #b19cd9;
+    --color-white: #ffffff;
+    --color-black: #000000;
+    --color-light-red: #e70000;
+    --color-red: #ca0000;
+    --color-dark-red: #8b0000;
+    --color-light-gray: #d3d3d3;
+    --color-orange: #ff8c00;
+    --color-gold: #ffd700;
+    --color-yellow: #ffea00;
+    --color-night-blue: #001f3f;
+    --color-night-dark: #003366;
+    --color-deep-blue: #001a33;
+    --color-cyan: #00bcd4;
+    --color-sea-light: #e0f7fa;
+    --color-software-gray: #424242;
+    --color-software-light: #757575;
+
+    /* Fonts */
+    --font-main: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body, html {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    font-family: var(--font-main);
+    background-color: var(--color-black);
+    color: var(--color-white);
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
+/* Snap Container Vertical */
+.snap-container-vertical {
+    display: block;
+    width: 100%;
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+.snap-container-vertical::-webkit-scrollbar {
+    display: none;
+}
+
+/* Base Page Style */
+.page {
+    width: 100%;
+    height: 100vh;
+    scroll-snap-align: start;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Animated Wavy Gradient for non-video pages */
+.animated-gradient {
+    background: linear-gradient(-45deg, var(--color-dark-purple), #1a0026, #3d005e, #12001c);
+    background-size: 400% 400%;
+    animation: gradient-wave 15s ease infinite;
+}
+
+@keyframes gradient-wave {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Ren'Py Layout: 60/40 Split */
+.renpy-top {
+    height: 60%;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.renpy-bottom {
+    height: 40%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 2rem 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    z-index: 5;
+    border-top: 2px solid var(--color-light-purple);
+    transition: background-color 0.8s ease, border-color 0.8s ease;
+}
+
+/* Page Specific Colors */
+.page--main .renpy-bottom, 
+.page--bio .renpy-bottom {
+    background-color: var(--color-dark-purple);
+}
+
+.page--dynamic-best .renpy-bottom {
+    background-color: var(--color-red);
+    border-top-color: var(--color-black);
+}
+
+.page--ambient-best .renpy-bottom {
+    background-color: var(--color-light-gray);
+    color: var(--color-black);
+    border-top-color: var(--color-black);
+}
+
+.page--ambient-best .track-title {
+    color: var(--color-black);
+}
+
+.page--leitmotif .renpy-bottom {
+    background-color: var(--color-orange);
+    border-top-color: var(--color-gold);
+}
+
+.page--leitmotif.night .renpy-bottom {
+    background-color: var(--color-night-blue);
+    border-top-color: var(--color-night-dark);
+}
+
+.page--hitech .renpy-bottom {
+    background-color: var(--color-gold);
+    color: var(--color-black);
+    border-top-color: var(--color-yellow);
+}
+
+.page--hitech .track-title {
+    color: var(--color-black);
+}
+
+.page--digicore .renpy-bottom {
+    background: linear-gradient(to right, #6a0dad, #1e3a8a);
+}
+
+.page--digicore .track-title {
+    background: linear-gradient(45deg, var(--color-white), var(--color-light-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.page--deepblue .renpy-bottom {
+    background-color: var(--color-deep-blue);
+}
+
+.page--deepblue .track-title {
+    background: linear-gradient(45deg, var(--color-light-purple), var(--color-white));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.page--sea .renpy-bottom {
+    background-color: var(--color-cyan);
+    color: var(--color-black);
+    border-top-color: var(--color-sea-light);
+}
+
+.page--sea .track-title {
+    color: var(--color-black);
+}
+
+.page--software .renpy-bottom {
+    background-color: var(--color-software-gray);
+}
+
+/* Main Page Content */
+.main-content {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.pfp {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 4px solid var(--color-light-purple);
+    object-fit: cover;
+}
+
+.nickname {
+    font-size: 3rem;
+    color: var(--color-light-purple);
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+
+.tagline {
+    font-size: 1.1rem;
+    line-height: 1.4;
+    margin-bottom: 1.5rem;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.social-icons img {
+    width: 28px;
+    height: 28px;
+    filter: invert(1);
+    transition: transform 0.3s ease;
+}
+
+.social-icons a:hover img {
+    transform: scale(1.2);
+}
+
+.page--main .renpy-top {
+    display: flex;
+}
+
+.page--main .page__column--dark {
+    flex: 0 0 40%;
+    background-color: var(--color-dark-purple);
+}
+
+.page--main .page__column--video {
+    flex: 0 0 60%;
+    position: relative;
+}
+
+/* Bio & Software Titles */
+.bio-title, .software-title {
+    font-size: 4rem;
+    color: var(--color-light-purple);
+    text-transform: uppercase;
+    letter-spacing: 10px;
+}
+
+.bio-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.bio-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+/* Track Info Layout */
+.track-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.track-text {
+    flex: 1;
+}
+
+.track-title {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-white);
+    background: linear-gradient(45deg, var(--color-white), var(--color-light-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+.page--dynamic-best .track-title {
+    background: linear-gradient(45deg, var(--color-dark-red), var(--color-black)) ;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.page--ambient-best .track-title,
+.page--hitech .track-title,
+.page--sea .track-title {
+    background: linear-gradient(45deg, var(--color-black), #333);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.page--leitmotif .track-title {
+    background: linear-gradient(45deg, var(--color-white), var(--color-gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.page--leitmotif.night .track-title {
+    background: linear-gradient(45deg, var(--color-light-purple), var(--color-white));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.track-description {
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+/* Custom Players */
+.custom-player, .custom-player-leitmotif {
+    flex: 0 0 450px; /* Increased to accommodate volume mixer */
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.volume-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-width: 100px;
+}
+
+.volume-icon {
+    width: 20px;
+    height: 20px;
+    filter: invert(1);
+}
+
+.volume-slider {
+    width: 60px;
+    height: 4px;
+    -webkit-appearance: none;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 2px;
+    outline: none;
+}
+
+.volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 12px;
+    height: 12px;
+    background: var(--color-light-purple);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.player-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--color-white);
+    cursor: pointer;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black"><path d="M8 5v14l11-7z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: transform 0.2s;
+}
+
+.player-btn.pause {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>');
+}
+
+.player-progress {
+    flex-grow: 1;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+}
+
+.progress-bar {
+    height: 100%;
+    background: var(--color-light-purple);
+    width: 0%;
+    border-radius: 4px;
+}
+
+/* Background Elements */
+.bg-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 1s ease;
+    opacity: 1;
+}
+
+/* Page 5 specific video swapping */
+.page--leitmotif .bg-video {
+    opacity: 0;
+}
+
+.page--leitmotif .bg-video.active {
+    opacity: 1;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+/* Leitmotif Switch */
+.page--leitmotif .renpy-bottom {
+    border-top-color: var(--color-orange);
+}
+
+.leitmotif-controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: var(--color-night-dark);
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+/* Sea Track Bubbles */
+.page--sea .renpy-bottom {
+    background-color: var(--color-cyan);
+    color: var(--color-black);
+    border-top-color: var(--color-sea-light);
+}
+
+@keyframes mesh-pulse {
+    0% { filter: hue-rotate(0deg); }
+    100% { filter: hue-rotate(45deg); }
+}
+
+/* Software Grid */
+.software-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.software-block {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.software-block:hover {
+    transform: translateY(-5px);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.software-icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 1rem;
+    filter: invert(1);
+}
+
+.software-block ul {
+    list-style: none;
+    font-size: 0.9rem;
+}
+
+/* Particle Canvas */
+#particle-canvas {
+    width: 100%;
+    height: 100%;
+}
+
+/* Equalizer */
+.equalizer {
+    display: flex;
+    align-items: flex-end;
+    gap: 6px;
+    height: 50px;
+}
+
+.eq-bar {
+    width: 12px;
+    background: var(--color-light-purple);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 1024px) {
+    .main-content, .track-info, .software-grid {
+        padding: 0 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .renpy-top { height: 50%; }
+    .renpy-bottom { height: 50%; padding: 1.5rem; }
+    
+    .main-content { flex-direction: column; gap: 1rem; text-align: center; }
+    .track-info { flex-direction: column; gap: 1rem; }
+    .custom-player { width: 100%; flex: 0 0 auto; }
+    .software-grid { grid-template-columns: 1fr; gap: 1rem; overflow-y: auto; }
+}
