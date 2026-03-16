@@ -169,13 +169,13 @@ body, html {
 }
 
 .page--sea .renpy-bottom {
-    background-color: var(--color-cyan);
-    color: var(--color-black);
-    border-top-color: var(--color-sea-light);
+    background-color: var(--color-night-blue);
+    color: var(--color-cyan);
+    border-top-color: var(--color-night-blue);
 }
 
 .page--sea .track-title {
-    color: var(--color-black);
+    color: linear-gradient(45deg, var(--color-cyan), var(--color-night-dark));
 }
 
 .page--software .renpy-bottom {
@@ -295,7 +295,7 @@ body, html {
 .page--ambient-best .track-title,
 .page--hitech .track-title,
 .page--sea .track-title {
-    background: linear-gradient(45deg, var(--color-black), #333);
+    background: linear-gradient(45deg, var(--color-cyan), #86496b);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -479,9 +479,9 @@ input:checked + .slider:before {
 
 /* Sea Track Bubbles */
 .page--sea .renpy-bottom {
-    background-color: var(--color-cyan);
+    background-color: var(--color-deep-blue);
     color: var(--color-black);
-    border-top-color: var(--color-sea-light);
+    border-top-color: var(--color-cyan);
 }
 
 @keyframes mesh-pulse {
